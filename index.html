@@ -16,7 +16,7 @@ body{
     color:#e2e8f0;
 }
 
-/* 🔥 LOGO GRADIENT */
+/* LOGO */
 .logo{
     font-weight:600;
     font-size:18px;
@@ -47,17 +47,15 @@ nav{
     transition:.3s;
 }
 
-/* hover */
 .nav-links a:hover{
     color:white;
 }
 
-/* 🔥 ACTIVE LINK */
+/* ACTIVE LINK */
 .nav-links a.active{
     color:#a78bfa;
 }
 
-/* underline glow */
 .nav-links a.active::after{
     content:"";
     position:absolute;
@@ -171,7 +169,7 @@ section{
     <div class="logo">Cloud & DevOps Bootcamp</div>
 
     <div class="nav-links">
-        <a href="#home" class="active">Головна</a>
+        <a href="#home">Головна</a>
         <a href="#about">Про практику</a>
         <a href="#topics">Теми навчання</a>
         <a href="#practice">Практичні завдання</a>
@@ -212,7 +210,21 @@ section{
     </p>
 </section>
 
+<section id="topics" class="fade">
+    <h2>Теми навчання</h2>
+</section>
+
+<section id="practice" class="fade">
+    <h2>Практичні завдання</h2>
+</section>
+
+<section id="result" class="fade">
+    <h2>Висновок</h2>
+</section>
+
 <script>
+
+/* fade */
 const elements=document.querySelectorAll('.fade');
 
 window.addEventListener('scroll',()=>{
@@ -222,6 +234,31 @@ window.addEventListener('scroll',()=>{
         }
     })
 })
+
+/* 🔥 ACTIVE NAV ON SCROLL */
+const sections = document.querySelectorAll("section, .hero");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+
 </script>
 
 </body>
