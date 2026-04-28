@@ -9,6 +9,10 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Inter',sans-serif;
     background:radial-gradient(circle at top,#0b1226,#020617);
@@ -32,14 +36,20 @@ nav a{
     margin-left:20px;
     text-decoration:none;
 }
+
 nav a:hover{color:white}
 
 /* HERO */
 .hero{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     padding:140px 8%;
+    overflow:hidden;
+}
+
+.hero-text{
+    max-width:500px;
 }
 
 .hero h1{
@@ -55,24 +65,34 @@ nav a:hover{color:white}
 
 .hero p{
     margin-top:20px;
-    max-width:520px;
     opacity:.75;
 }
 
-/* DEVOPS INFINITY */
-.devops-icon{
-    width:480px;
-    filter:
-        drop-shadow(0 0 20px #8b5cf6)
-        drop-shadow(0 0 50px #8b5cf6)
-        drop-shadow(0 0 90px rgba(139,92,246,0.6));
-    animation:glowPulse 3s infinite;
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    background:linear-gradient(90deg,#6366f1,#8b5cf6);
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
 }
 
-@keyframes glowPulse{
-    0%{filter:drop-shadow(0 0 10px #8b5cf6)}
-    50%{filter:drop-shadow(0 0 60px #8b5cf6)}
-    100%{filter:drop-shadow(0 0 10px #8b5cf6)}
+.btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(139,92,246,0.4);
+}
+
+/* IMAGE */
+.hero-image img{
+    width:520px;
+
+    mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+
+    opacity:0.95;
 }
 
 /* SECTION */
@@ -166,7 +186,8 @@ h2{
 </nav>
 
 <div class="hero">
-    <div>
+
+    <div class="hero-text">
         <h1>
             Cloud & DevOps<br>
             <span class="gradient">Bootcamp</span>
@@ -177,27 +198,16 @@ h2{
             Основна увага приділялася роботі з Linux, автоматизації процесів
             за допомогою Bash та Python, а також використанню Docker.
         </p>
+
+        <a href="#about" class="btn">
+            Детальніше ↓
+        </a>
     </div>
 
-    <!-- НОРМАЛЬНА DEVOPS ІКОНКА -->
-    <svg class="devops-icon" viewBox="0 0 600 300">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#8b5cf6"/>
-          <stop offset="100%" stop-color="#a78bfa"/>
-        </linearGradient>
-      </defs>
+    <div class="hero-image">
+        <img src="hero.png" alt="devops">
+    </div>
 
-      <path d="M150,150 
-               C150,40 300,40 300,150 
-               C300,260 450,260 450,150 
-               C450,40 300,40 300,150 
-               C300,260 150,260 150,150"
-            fill="none"
-            stroke="url(#grad)"
-            stroke-width="25"
-            stroke-linecap="round"/>
-    </svg>
 </div>
 
 <section id="about" class="fade">
@@ -231,10 +241,10 @@ h2{
     <h2>Теми навчання</h2>
 
     <div class="grid">
-        <div class="card"><b>Linux Practice</b><br>Робота з файловою системою та процесами</div>
-        <div class="card"><b>Bash Practice</b><br>Автоматизація за допомогою скриптів</div>
-        <div class="card"><b>Python Practice</b><br>Скрипти та обробка даних</div>
-        <div class="card"><b>Docker Practice</b><br>Контейнеризація та середовища</div>
+        <div class="card">Linux Practice</div>
+        <div class="card">Bash Practice</div>
+        <div class="card">Python Practice</div>
+        <div class="card">Docker Practice</div>
     </div>
 </section>
 
