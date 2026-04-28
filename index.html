@@ -4,207 +4,222 @@
 <meta charset="UTF-8">
 <title>Cloud & DevOps Bootcamp</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: #0a0f1f;
-    color: #e5e7eb;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Inter',sans-serif;
+    background:#050816;
+    color:#e5e7eb;
 }
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(5,8,22,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+nav a{
+    color:#9ca3af;
+    margin-left:20px;
+    text-decoration:none;
+    transition:.3s;
+}
+nav a:hover{color:white}
 
 /* HERO */
-.hero {
-    padding: 120px 10%;
-    max-width: 1100px;
-    margin: auto;
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 10%;
+}
+.hero h1{
+    font-size:72px;
+    line-height:1.1;
+}
+.gradient{
+    background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+.hero p{
+    margin-top:20px;
+    max-width:500px;
+    opacity:.7;
 }
 
-.hero h1 {
-    font-size: 64px;
-    line-height: 1.1;
+/* SECTIONS */
+section{
+    padding:120px 10%;
+    max-width:1200px;
+    margin:auto;
 }
 
-.hero span {
-    color: #6366f1;
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
 }
 
-.hero p {
-    margin-top: 20px;
-    max-width: 500px;
-    opacity: 0.7;
+/* CARD */
+.card{
+    background:rgba(30,41,59,0.4);
+    padding:25px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 40px rgba(56,189,248,0.15);
 }
 
-/* BADGES */
-.badges {
-    margin-top: 30px;
+/* TEXT */
+h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+p{
+    opacity:.75;
+    line-height:1.6;
 }
 
-.badge {
-    display: inline-block;
-    padding: 8px 14px;
-    background: #111827;
-    border-radius: 20px;
-    margin-right: 10px;
-    font-size: 14px;
+/* SPLIT */
+.split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
 }
 
-/* SECTION */
-section {
-    padding: 80px 10%;
-    max-width: 1100px;
-    margin: auto;
+/* IMAGES */
+img{
+    width:100%;
+    border-radius:14px;
+    margin-top:20px;
+    transition:.4s;
 }
+img:hover{transform:scale(1.02)}
 
-h2 {
-    margin-bottom: 20px;
-    font-size: 32px;
+/* FADE */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
 }
-
-/* TWO COL */
-.two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* SCREENSHOTS */
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-/* BLOCK */
-.block {
-    background: #111827;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+    <div>Cloud & DevOps</div>
+    <div>
+        <a href="#about">Про</a>
+        <a href="#topics">Теми</a>
+        <a href="#practice">Практика</a>
+        <a href="#result">Результат</a>
+    </div>
+</nav>
+
 <div class="hero">
     <h1>
-        Cloud & DevOps <span>Bootcamp</span>
+        Cloud & DevOps<br>
+        <span class="gradient">Bootcamp</span>
     </h1>
 
     <p>
-        Практичне освоєння сучасних DevOps-технологій у межах навчальної програми EPAM.
-        Фокус на реальних інструментах, автоматизації та роботі з середовищами виконання.
+        Практичне освоєння DevOps-підходів у рамках навчальної програми EPAM.
+        Фокус на роботі з інструментами, автоматизації процесів та взаємодії з інфраструктурою.
     </p>
-
-    <div class="badges">
-        <span class="badge">Linux</span>
-        <span class="badge">Bash</span>
-        <span class="badge">Python</span>
-        <span class="badge">Docker</span>
-    </div>
 </div>
 
-<section>
+<section id="about" class="fade">
     <h2>Про практику</h2>
 
-    <div class="two">
+    <div class="split">
         <div>
             <p>
                 Метою практики було формування базових професійних компетенцій у сфері DevOps,
-                а також набуття актуальних знань і навичок роботи з сучасними технологіями.
+                що включає розуміння роботи операційних систем, автоматизації процесів
+                та використання сучасних інструментів розробки.
             </p>
 
             <p>
-                Основний акцент був зроблений на практичному виконанні завдань,
-                що дозволило не лише ознайомитися з теорією,
-                а й отримати реальний досвід роботи з інструментами.
+                Значна частина навчання була побудована навколо практичних завдань,
+                що виконувались у середовищі командного рядка.
+                Це дозволило не лише ознайомитися з теорією, а й отримати практичний досвід.
             </p>
         </div>
 
-        <div class="block">
-            <b>Ключові аспекти:</b>
-            <ul>
-                <li>Робота в середовищі Linux</li>
-                <li>Автоматизація через Bash</li>
-                <li>Скрипти на Python</li>
-                <li>Контейнеризація Docker</li>
-            </ul>
+        <div class="card">
+            <b>Ключові акценти:</b><br><br>
+            • робота в Linux-середовищі<br>
+            • автоматизація через Bash<br>
+            • написання Python-скриптів<br>
+            • контейнеризація Docker
         </div>
     </div>
 </section>
 
-<section>
-    <h2>Що відбувалося під час практики</h2>
-
-    <div class="cards">
-        <div class="card">
-            Ознайомлення з Linux та роботою в командному рядку
-        </div>
-        <div class="card">
-            Написання Bash-скриптів для автоматизації задач
-        </div>
-        <div class="card">
-            Використання Python для обробки даних
-        </div>
-        <div class="card">
-            Робота з Docker-контейнерами
-        </div>
-    </div>
-</section>
-
-<section>
+<section id="topics" class="fade">
     <h2>Теми навчання</h2>
 
-    <div class="cards">
+    <div class="grid">
         <div class="card">
-            <b>Linux Practice</b><br>
-            Робота з файловою системою, процесами та командами.
+            <h3>Linux Practice</h3>
+            <p>
+                Робота з файловою системою, процесами та правами доступу.
+                Використання командного рядка як основного інструменту.
+            </p>
         </div>
 
         <div class="card">
-            <b>Bash Practice</b><br>
-            Написання скриптів та автоматизація процесів.
+            <h3>Bash Practice</h3>
+            <p>
+                Написання скриптів для автоматизації задач,
+                робота з аргументами та змінними.
+            </p>
         </div>
 
         <div class="card">
-            <b>Python Practice</b><br>
-            Створення скриптів і робота з даними.
+            <h3>Python Practice</h3>
+            <p>
+                Створення скриптів для обробки даних,
+                автоматизації та роботи з файлами.
+            </p>
         </div>
 
         <div class="card">
-            <b>Docker Practice</b><br>
-            Створення образів та запуск контейнерів.
+            <h3>Docker Practice</h3>
+            <p>
+                Основи контейнеризації,
+                створення образів та запуск контейнерів.
+            </p>
         </div>
     </div>
 </section>
 
-<section>
+<section id="practice" class="fade">
     <h2>Практичні завдання</h2>
 
     <p>
-        У межах кожного модуля виконувалися практичні завдання,
-        які дозволили закріпити отримані знання та сформувати навички
-        роботи з інструментами DevOps.
+        У процесі навчання виконувалися практичні завдання,
+        спрямовані на закріплення знань та формування навичок роботи з інструментами DevOps.
     </p>
 
     <img src="linux.png">
@@ -212,20 +227,31 @@ img {
     <img src="docker.png">
 </section>
 
-<section>
+<section id="result" class="fade">
     <h2>Результат</h2>
 
     <p>
-        У результаті проходження практики було сформовано базові навички
-        роботи з Linux, Bash, Python та Docker.
+        У результаті проходження практики було сформовано базові компетенції у сфері DevOps,
+        що включають роботу з операційними системами, написання скриптів та використання контейнерів.
     </p>
 
     <p>
-        Отриманий досвід є основою для подальшого розвитку в напрямку DevOps,
-        а також дозволяє краще розуміти принципи автоматизації
-        та роботи з сучасною ІТ-інфраструктурою.
+        Отриманий досвід є фундаментом для подальшого професійного розвитку
+        та роботи з сучасними ІТ-системами.
     </p>
 </section>
+
+<script>
+const items=document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+    items.forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
