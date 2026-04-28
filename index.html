@@ -3,48 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <title>Cloud & DevOps Bootcamp</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
-    font-family: Arial;
     margin: 0;
-    background: #0f172a;
-    color: white;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f1a;
+    color: #e2e8f0;
 }
 
 header {
-    padding: 60px;
+    padding: 100px 20px;
     text-align: center;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+    background: radial-gradient(circle at top, #1e293b, #020617);
+}
+
+h1 {
+    font-size: 48px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p {
+    opacity: 0.8;
 }
 
 section {
-    padding: 40px;
-    max-width: 900px;
+    padding: 60px 20px;
+    max-width: 1000px;
     margin: auto;
 }
 
-h1, h2 {
+h2 {
     color: #38bdf8;
+    margin-bottom: 20px;
 }
 
-.cards {
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .card {
-    background: #1e293b;
+    background: rgba(30, 41, 59, 0.5);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
-img {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+.screenshots img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -54,34 +84,51 @@ img {
 
 <section>
     <h2>Про практику</h2>
-    <p>Метою практики було формування базових професійних компетенцій у сфері DevOps, набуття актуальних знань і практичних навичок роботи з сучасними технологіями.</p>
+    <p>
+        Метою практики було формування базових професійних компетенцій у сфері DevOps,
+        набуття актуальних знань і практичних навичок роботи з сучасними технологіями.
+    </p>
 </section>
 
 <section>
     <h2>Що виконувалось</h2>
-    <p>Під час практики здійснювалося опрацювання навчальних модулів та виконання практичних завдань у середовищі командного рядка.</p>
+    <p>
+        Під час практики здійснювалося опрацювання навчальних модулів та виконання практичних
+        завдань у середовищі командного рядка, що дозволило сформувати базові навички роботи
+        з інструментами DevOps.
+    </p>
 </section>
 
 <section>
     <h2>Теми навчання</h2>
-    <div class="cards">
+    <div class="grid">
         <div class="card">Linux Practice</div>
-        <div class="card">Scripting: Bash Practice</div>
-        <div class="card">Scripting: Python Practice</div>
-        <div class="card">Containerization: Docker Practice</div>
+        <div class="card">Bash Practice</div>
+        <div class="card">Python Practice</div>
+        <div class="card">Docker Practice</div>
     </div>
 </section>
 
-<section>
+<section class="screenshots">
     <h2>Практичні завдання</h2>
-    <p>Виконання завдань у командному рядку, написання скриптів та робота з контейнерами.</p>
-    <img src="https://via.placeholder.com/800x400" alt="screenshot">
+    <p>Виконання команд, написання скриптів та робота з контейнерами:</p>
+
+    <img src="your-linux.png">
+    <img src="your-bash.png">
+    <img src="your-docker.png">
 </section>
 
 <section>
     <h2>Висновок</h2>
-    <p>У результаті проходження практики було набуто базових знань і сформовано професійні компетенції для подальшого розвитку в ІТ.</p>
+    <p>
+        У результаті проходження практики було набуто базових знань і сформовано професійні
+        компетенції для подальшого розвитку в ІТ-сфері.
+    </p>
 </section>
+
+<footer>
+    EPAM Practice • DevOps
+</footer>
 
 </body>
 </html>
