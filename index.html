@@ -7,66 +7,123 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
+}
+
+body {
     font-family: 'Inter', sans-serif;
-    background: #0b0f1a;
+    background: #050816;
     color: #e2e8f0;
 }
 
+/* HERO */
 header {
-    padding: 100px 20px;
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: radial-gradient(circle at top, #1e293b, #020617);
+    text-align: center;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 56px;
     background: linear-gradient(90deg, #38bdf8, #818cf8);
     -webkit-background-clip: text;
     color: transparent;
 }
 
-p {
+.subtitle {
+    margin-top: 20px;
     opacity: 0.8;
 }
 
+/* SECTION */
 section {
-    padding: 60px 20px;
-    max-width: 1000px;
+    padding: 80px 20px;
+    max-width: 1100px;
     margin: auto;
 }
 
 h2 {
     color: #38bdf8;
     margin-bottom: 20px;
+    font-size: 28px;
 }
 
+/* TEXT */
+.text {
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
+/* FLIP CARDS */
 .card {
-    background: rgba(30, 41, 59, 0.5);
-    padding: 20px;
+    perspective: 1000px;
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
+    padding: 20px;
+    background: #1e293b;
+    backface-visibility: hidden;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(56,189,248,0.3);
+.back {
+    transform: rotateY(180deg);
+    background: #0f172a;
 }
 
-.screenshots img {
+/* SCREENSHOTS */
+.screens img {
     width: 100%;
     border-radius: 12px;
     margin-top: 15px;
+    transition: 0.3s;
 }
 
+.screens img:hover {
+    transform: scale(1.03);
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
@@ -79,56 +136,111 @@ footer {
 
 <header>
     <h1>Cloud & DevOps Bootcamp</h1>
-    <p>Звіт про проходження практики в EPAM</p>
+    <p class="subtitle">
+        Практичне занурення у світ DevOps: від командного рядка до контейнеризації
+    </p>
 </header>
 
-<section>
+<section class="fade">
     <h2>Про практику</h2>
-    <p>
-        Метою практики було формування базових професійних компетенцій у сфері DevOps,
-        набуття актуальних знань і практичних навичок роботи з сучасними технологіями.
+    <p class="text">
+        Практика була спрямована на формування базових професійних компетенцій у сфері DevOps,
+        а також набуття актуальних знань і навичок роботи з сучасними інструментами.
+        Особлива увага приділялася практичному застосуванню технологій через виконання
+        завдань у середовищі командного рядка.
     </p>
 </section>
 
-<section>
-    <h2>Що виконувалось</h2>
-    <p>
-        Під час практики здійснювалося опрацювання навчальних модулів та виконання практичних
-        завдань у середовищі командного рядка, що дозволило сформувати базові навички роботи
-        з інструментами DevOps.
+<section class="fade">
+    <h2>Що відбувалося під час практики</h2>
+    <p class="text">
+        У процесі навчання здійснювалося опрацювання теоретичних матеріалів і виконання
+        практичних завдань. Основний акцент був зроблений на розумінні принципів роботи
+        операційних систем, автоматизації процесів за допомогою скриптів та основ контейнеризації.
     </p>
 </section>
 
-<section>
+<section class="fade">
     <h2>Теми навчання</h2>
+
     <div class="grid">
-        <div class="card">Linux Practice</div>
-        <div class="card">Bash Practice</div>
-        <div class="card">Python Practice</div>
-        <div class="card">Docker Practice</div>
+
+        <div class="card">
+            <div class="inner">
+                <div class="front">Linux Practice</div>
+                <div class="back">
+                    Робота з файловою системою, командами, процесами та середовищем Linux.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inner">
+                <div class="front">Bash Practice</div>
+                <div class="back">
+                    Написання скриптів для автоматизації задач та обробки даних.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inner">
+                <div class="front">Python Practice</div>
+                <div class="back">
+                    Використання Python для створення простих скриптів і роботи з даними.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="inner">
+                <div class="front">Docker Practice</div>
+                <div class="back">
+                    Створення образів, запуск контейнерів та ізоляція середовищ виконання.
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<section class="screenshots">
+<section class="fade screens">
     <h2>Практичні завдання</h2>
-    <p>Виконання команд, написання скриптів та робота з контейнерами:</p>
+    <p class="text">
+        У межах кожного модуля виконувалися практичні завдання, які включали роботу
+        з командним рядком, написання скриптів та запуск контейнерів.
+    </p>
 
-    <img src="your-linux.png">
-    <img src="your-bash.png">
-    <img src="your-docker.png">
+    <img src="linux.png">
+    <img src="bash.png">
+    <img src="docker.png">
 </section>
 
-<section>
-    <h2>Висновок</h2>
-    <p>
-        У результаті проходження практики було набуто базових знань і сформовано професійні
-        компетенції для подальшого розвитку в ІТ-сфері.
+<section class="fade">
+    <h2>Результат</h2>
+    <p class="text">
+        У результаті проходження практики було сформовано базові навички роботи з Linux,
+        Bash, Python та Docker. Отримані знання створюють основу для подальшого розвитку
+        в напрямку DevOps та роботи з сучасною ІТ-інфраструктурою.
     </p>
 </section>
 
 <footer>
-    EPAM Practice • DevOps
+    EPAM • DevOps Practice
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+</script>
 
 </body>
 </html>
