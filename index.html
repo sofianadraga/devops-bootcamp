@@ -13,7 +13,7 @@ html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
-    background:#020617;
+    background:#020617; /* темніший фон — підганяємо під картинку */
     color:#e2e8f0;
 }
 
@@ -24,7 +24,7 @@ nav{
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
-    background:rgba(2,6,23,0.7);
+    background:rgba(2,6,23,0.8);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
@@ -42,7 +42,8 @@ nav a:hover{color:white}
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:140px 8% 80px;
+    padding:140px 8%;
+    overflow:hidden;
 }
 
 /* TEXT */
@@ -83,23 +84,22 @@ nav a:hover{color:white}
     box-shadow:0 10px 30px rgba(139,92,246,0.4);
 }
 
-/* IMAGE */
-.hero-image img{
-    width:700px;
-    transform:translateY(-40px);
+/* IMAGE BLOCK */
+.hero-image{
+    position:relative;
+    flex:1;
 }
 
-/* 🔥 РІВНИЙ ПЕРЕХІД (але виглядає дорого) */
-.divider{
-    height:1px;
-    background:linear-gradient(
-        to right,
-        transparent,
-        rgba(99,102,241,0.5),
-        transparent
-    );
-    margin:60px auto;
-    width:80%;
+/* МАГІЯ */
+.hero-image img{
+    width:800px; /* збільшили */
+    transform:translateX(80px) translateY(40px); /* позиція як у макеті */
+
+    /* плавне злиття з фоном */
+    -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+    mask-image: linear-gradient(to left, black 70%, transparent 100%);
+
+    opacity:0.95;
 }
 
 /* SECTION */
@@ -109,6 +109,62 @@ section{
     margin:auto;
 }
 
+h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/* SPLIT */
+.split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+/* FEATURE BOX */
+.feature-box{
+    background:rgba(30,41,59,.4);
+    padding:30px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.feature{margin-bottom:20px}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:rgba(30,41,59,.4);
+    padding:25px;
+    border-radius:16px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(56,189,248,.15);
+}
+
+/* SCREEN GRID */
+.screens{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.screens img{
+    width:100%;
+    border-radius:12px;
+}
+
+/* FADE */
 .fade{
     opacity:0;
     transform:translateY(40px);
@@ -159,17 +215,11 @@ section{
 
 </div>
 
-<div class="divider"></div>
-
 <section id="about" class="fade">
     <h2>Про практику</h2>
-
     <p>
-        Метою проходження практики було формування базових професійних
-        компетенцій у сфері DevOps, а також набуття практичних навичок роботи
-        з сучасними інструментами автоматизації.
+        Метою проходження практики було формування базових компетенцій у сфері DevOps.
     </p>
-
 </section>
 
 <script>
