@@ -9,13 +9,11 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
-    background:radial-gradient(circle at top,#0b1226,#020617);
+    background:#020617; /* темніший фон — підганяємо під картинку */
     color:#e2e8f0;
 }
 
@@ -26,7 +24,7 @@ nav{
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
-    background:rgba(2,6,23,0.7);
+    background:rgba(2,6,23,0.8);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
@@ -48,8 +46,9 @@ nav a:hover{color:white}
     overflow:hidden;
 }
 
+/* TEXT */
 .hero-text{
-    max-width:500px;
+    max-width:520px;
 }
 
 .hero h1{
@@ -85,12 +84,20 @@ nav a:hover{color:white}
     box-shadow:0 10px 30px rgba(139,92,246,0.4);
 }
 
-/* IMAGE */
-.hero-image img{
-    width:520px;
+/* IMAGE BLOCK */
+.hero-image{
+    position:relative;
+    flex:1;
+}
 
-    mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+/* МАГІЯ */
+.hero-image img{
+    width:800px; /* збільшили */
+    transform:translateX(80px) translateY(40px); /* позиція як у макеті */
+
+    /* плавне злиття з фоном */
+    -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+    mask-image: linear-gradient(to left, black 70%, transparent 100%);
 
     opacity:0.95;
 }
@@ -122,9 +129,7 @@ h2{
     border:1px solid rgba(255,255,255,.05);
 }
 
-.feature{
-    margin-bottom:20px;
-}
+.feature{margin-bottom:20px}
 
 /* GRID */
 .grid{
@@ -211,60 +216,9 @@ h2{
 </div>
 
 <section id="about" class="fade">
-    <div class="split">
-
-        <div>
-            <h2>Про практику</h2>
-
-            <p>
-                Метою проходження практики було формування базових професійних компетенцій
-                у сфері DevOps, включаючи роботу з операційними системами,
-                автоматизацію процесів та використання сучасних інструментів.
-            </p>
-
-            <p>
-                Практика включала опрацювання навчальних модулів та виконання практичних завдань,
-                що дозволило закріпити теоретичні знання та сформувати практичні навички.
-            </p>
-        </div>
-
-        <div class="feature-box">
-            <div class="feature">⚡ Практичний підхід</div>
-            <div class="feature">⚙️ Сучасні технології DevOps</div>
-            <div class="feature">📈 Реальні навички</div>
-        </div>
-
-    </div>
-</section>
-
-<section id="topics" class="fade">
-    <h2>Теми навчання</h2>
-
-    <div class="grid">
-        <div class="card">Linux Practice</div>
-        <div class="card">Bash Practice</div>
-        <div class="card">Python Practice</div>
-        <div class="card">Docker Practice</div>
-    </div>
-</section>
-
-<section id="practice" class="fade">
-    <h2>Практичні завдання</h2>
-
-    <div class="screens">
-        <img src="linux.png">
-        <img src="bash.png">
-        <img src="docker.png">
-        <img src="docker2.png">
-    </div>
-</section>
-
-<section id="result" class="fade">
-    <h2>Результат</h2>
-
+    <h2>Про практику</h2>
     <p>
-        У результаті проходження практики було сформовано базові навички роботи
-        з DevOps-інструментами та розуміння принципів автоматизації.
+        Метою проходження практики було формування базових компетенцій у сфері DevOps.
     </p>
 </section>
 
