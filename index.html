@@ -7,208 +7,181 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
 body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
     background: #050816;
     color: #e2e8f0;
 }
 
 /* HERO */
-header {
-    height: 100vh;
+.hero {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 100px 10%;
     background: radial-gradient(circle at top, #1e293b, #020617);
-    text-align: center;
 }
 
-h1 {
+.hero-text {
+    max-width: 500px;
+}
+
+.hero h1 {
     font-size: 56px;
     background: linear-gradient(90deg, #38bdf8, #818cf8);
     -webkit-background-clip: text;
     color: transparent;
 }
 
-.subtitle {
+.hero p {
     margin-top: 20px;
     opacity: 0.8;
 }
 
-/* SECTION */
+.hero img {
+    width: 350px;
+}
+
+/* SECTIONS */
 section {
-    padding: 80px 20px;
-    max-width: 1100px;
-    margin: auto;
+    padding: 80px 10%;
 }
 
 h2 {
     color: #38bdf8;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-/* TEXT */
-.text {
-    line-height: 1.7;
-    opacity: 0.85;
 }
 
 /* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    gap: 20px;
 }
 
-/* FLIP CARDS */
+/* CARDS */
 .card {
-    perspective: 1000px;
-}
-
-.inner {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.card:hover .inner {
-    transform: rotateY(180deg);
-}
-
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    padding: 20px;
     background: #1e293b;
-    backface-visibility: hidden;
+    padding: 20px;
+    border-radius: 15px;
 }
 
-.back {
-    transform: rotateY(180deg);
-    background: #0f172a;
+/* BIG BLOCK */
+.highlight {
+    background: rgba(56,189,248,0.1);
+    padding: 20px;
+    border-radius: 15px;
 }
 
 /* SCREENSHOTS */
-.screens img {
+img {
     width: 100%;
     border-radius: 12px;
     margin-top: 15px;
-    transition: 0.3s;
 }
 
-.screens img:hover {
-    transform: scale(1.03);
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid #38bdf8;
+    padding-left: 20px;
 }
 
-/* FADE ANIMATION */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px;
-    opacity: 0.5;
+.timeline div {
+    margin-bottom: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Cloud & DevOps Bootcamp</h1>
-    <p class="subtitle">
-        Практичне занурення у світ DevOps: від командного рядка до контейнеризації
-    </p>
-</header>
+<div class="hero">
+    <div class="hero-text">
+        <h1>Cloud & DevOps Bootcamp</h1>
+        <p>
+            Практичне занурення у сферу DevOps у межах програми EPAM.
+            Вивчення сучасних технологій, інструментів автоматизації та роботи з інфраструктурою.
+        </p>
+    </div>
+    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721265.png">
+</div>
 
-<section class="fade">
+<section>
     <h2>Про практику</h2>
-    <p class="text">
-        Практика була спрямована на формування базових професійних компетенцій у сфері DevOps,
-        а також набуття актуальних знань і навичок роботи з сучасними інструментами.
-        Особлива увага приділялася практичному застосуванню технологій через виконання
-        завдань у середовищі командного рядка.
+    <p>
+        Метою проходження практики було формування базових професійних компетенцій
+        у сфері DevOps, а також набуття актуальних знань і практичних навичок роботи
+        з сучасними інструментами розробки та автоматизації.
     </p>
-</section>
 
-<section class="fade">
-    <h2>Що відбувалося під час практики</h2>
-    <p class="text">
-        У процесі навчання здійснювалося опрацювання теоретичних матеріалів і виконання
-        практичних завдань. Основний акцент був зроблений на розумінні принципів роботи
-        операційних систем, автоматизації процесів за допомогою скриптів та основ контейнеризації.
-    </p>
-</section>
-
-<section class="fade">
-    <h2>Теми навчання</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <div class="inner">
-                <div class="front">Linux Practice</div>
-                <div class="back">
-                    Робота з файловою системою, командами, процесами та середовищем Linux.
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="inner">
-                <div class="front">Bash Practice</div>
-                <div class="back">
-                    Написання скриптів для автоматизації задач та обробки даних.
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="inner">
-                <div class="front">Python Practice</div>
-                <div class="back">
-                    Використання Python для створення простих скриптів і роботи з даними.
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="inner">
-                <div class="front">Docker Practice</div>
-                <div class="back">
-                    Створення образів, запуск контейнерів та ізоляція середовищ виконання.
-                </div>
-            </div>
-        </div>
-
+    <div class="highlight">
+        Основний акцент був зроблений не лише на теоретичному матеріалі,
+        а й на практичному виконанні завдань у середовищі командного рядка.
     </div>
 </section>
 
-<section class="fade screens">
+<section>
+    <h2>Що відбувалося під час практики</h2>
+
+    <div class="timeline">
+        <div>
+            🔹 Ознайомлення з середовищем Linux та основами роботи в терміналі
+        </div>
+        <div>
+            🔹 Написання Bash-скриптів для автоматизації задач
+        </div>
+        <div>
+            🔹 Використання Python для обробки даних та створення скриптів
+        </div>
+        <div>
+            🔹 Робота з Docker: створення образів і запуск контейнерів
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Теми навчання</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Linux Practice</h3>
+            <p>
+                Робота з файловою системою, правами доступу,
+                процесами та основними командами операційної системи Linux.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Bash Practice</h3>
+            <p>
+                Написання скриптів, автоматизація процесів,
+                робота з змінними та аргументами командного рядка.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Python Practice</h3>
+            <p>
+                Використання Python для створення утиліт,
+                обробки файлів і базових автоматизованих сценаріїв.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Docker Practice</h3>
+            <p>
+                Основи контейнеризації, створення образів,
+                запуск та управління контейнерами.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
     <h2>Практичні завдання</h2>
-    <p class="text">
-        У межах кожного модуля виконувалися практичні завдання, які включали роботу
-        з командним рядком, написання скриптів та запуск контейнерів.
+    <p>
+        У межах кожного модуля виконувалися практичні завдання,
+        спрямовані на закріплення отриманих знань та формування
+        практичних навичок роботи з інструментами DevOps.
     </p>
 
     <img src="linux.png">
@@ -216,31 +189,19 @@ footer {
     <img src="docker.png">
 </section>
 
-<section class="fade">
-    <h2>Результат</h2>
-    <p class="text">
-        У результаті проходження практики було сформовано базові навички роботи з Linux,
-        Bash, Python та Docker. Отримані знання створюють основу для подальшого розвитку
-        в напрямку DevOps та роботи з сучасною ІТ-інфраструктурою.
+<section>
+    <h2>Результати та висновки</h2>
+    <p>
+        У результаті проходження практики було сформовано базові навички роботи
+        з Linux, Bash, Python та Docker.
+    </p>
+
+    <p>
+        Отриманий досвід дозволяє краще розуміти принципи автоматизації,
+        роботи з інфраструктурою та підготовки середовищ виконання,
+        що є ключовими елементами сучасного DevOps-підходу.
     </p>
 </section>
-
-<footer>
-    EPAM • DevOps Practice
-</footer>
-
-<script>
-const elements = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100) {
-            el.classList.add('show');
-        }
-    });
-});
-</script>
 
 </body>
 </html>
