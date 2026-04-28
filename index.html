@@ -60,36 +60,20 @@ nav a:hover{color:white}
     opacity:.75;
 }
 
-/* INFINITY */
-.infinity{
+/* INFINITY SVG */
+.infinity-svg{
     width:420px;
-    height:200px;
-    position:relative;
-    filter:drop-shadow(0 0 40px rgba(139,92,246,0.6));
+    filter:
+        drop-shadow(0 0 20px #8b5cf6)
+        drop-shadow(0 0 40px #8b5cf6)
+        drop-shadow(0 0 80px rgba(139,92,246,0.5));
+    animation:pulse 3s infinite;
 }
 
-.infinity::before,
-.infinity::after{
-    content:"";
-    position:absolute;
-    width:150px;
-    height:150px;
-    border:12px solid transparent;
-    border-top:12px solid #8b5cf6;
-    border-radius:50%;
-    box-shadow:
-        0 0 20px #8b5cf6,
-        0 0 40px #8b5cf6;
-}
-
-.infinity::before{
-    left:0;
-    transform:rotate(45deg);
-}
-
-.infinity::after{
-    right:0;
-    transform:rotate(-45deg);
+@keyframes pulse{
+    0%{filter:drop-shadow(0 0 10px #8b5cf6)}
+    50%{filter:drop-shadow(0 0 40px #8b5cf6)}
+    100%{filter:drop-shadow(0 0 10px #8b5cf6)}
 }
 
 /* SECTION */
@@ -197,7 +181,18 @@ h2{
         </p>
     </div>
 
-    <div class="infinity"></div>
+    <!-- НОРМАЛЬНА НЕСКІНЧЕННІСТЬ -->
+    <svg class="infinity-svg" viewBox="0 0 300 150">
+        <path d="M50,75 
+                 C50,20 150,20 150,75 
+                 C150,130 250,130 250,75 
+                 C250,20 150,20 150,75 
+                 C150,130 50,130 50,75"
+              fill="none"
+              stroke="#8b5cf6"
+              stroke-width="10"
+              stroke-linecap="round"/>
+    </svg>
 </div>
 
 <section id="about" class="fade">
@@ -215,14 +210,14 @@ h2{
             <p>
                 Практика проходила у форматі навчальних модулів, де теоретичні знання
                 одразу закріплювалися виконанням практичних завдань у командному рядку.
-                Такий підхід дозволив глибше зрозуміти логіку роботи інструментів.
+                Такий підхід дозволив сформувати системне розуміння інструментів.
             </p>
         </div>
 
         <div class="feature-box">
-            <div class="feature">⚡ Практичний підхід — більшість часу присвячена виконанню завдань</div>
+            <div class="feature">⚡ Практичний підхід — більшість часу практика</div>
             <div class="feature">⚙️ Сучасні технології — Linux, Bash, Python, Docker</div>
-            <div class="feature">📈 Формування навичок — орієнтація на реальні сценарії використання</div>
+            <div class="feature">📈 Формування навичок — орієнтація на реальні задачі</div>
         </div>
 
     </div>
@@ -234,26 +229,22 @@ h2{
     <div class="grid">
         <div class="card">
             <b>Linux Practice</b><br><br>
-            Робота з файловою системою, процесами, правами доступу
-            та базовими командами операційної системи Linux.
+            Робота з файловою системою, процесами та командами.
         </div>
 
         <div class="card">
             <b>Bash Practice</b><br><br>
-            Написання скриптів для автоматизації процесів,
-            використання змінних та аргументів.
+            Написання скриптів та автоматизація процесів.
         </div>
 
         <div class="card">
             <b>Python Practice</b><br><br>
-            Використання Python для створення утиліт,
-            обробки даних і базової автоматизації.
+            Створення скриптів і робота з даними.
         </div>
 
         <div class="card">
             <b>Docker Practice</b><br><br>
-            Основи контейнеризації, створення образів,
-            запуск і управління контейнерами.
+            Контейнеризація, створення образів і запуск сервісів.
         </div>
     </div>
 </section>
@@ -263,8 +254,8 @@ h2{
 
     <p>
         У межах кожного модуля виконувалися практичні завдання,
-        що дозволили закріпити отримані знання та сформувати
-        практичні навички роботи з інструментами DevOps.
+        що дозволило закріпити отримані знання та сформувати навички
+        роботи з інструментами DevOps.
     </p>
 
     <div class="screens">
@@ -284,9 +275,8 @@ h2{
     </p>
 
     <p>
-        Отриманий досвід дозволяє краще розуміти принципи автоматизації,
-        роботи з інфраструктурою та підготовки середовищ виконання,
-        що є ключовими аспектами сучасного DevOps-підходу.
+        Отриманий досвід є основою для подальшого розвитку у сфері DevOps
+        та роботи з сучасною ІТ-інфраструктурою.
     </p>
 </section>
 
