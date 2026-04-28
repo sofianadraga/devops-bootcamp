@@ -13,22 +13,8 @@ html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
+    background:#020617;
     color:#e2e8f0;
-
-    background:
-        url("hero.png") no-repeat right -40px,
-        #020617;
-
-    background-size: 900px auto;
-}
-
-/* затемнення */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:linear-gradient(to right,#020617 45%,transparent 100%);
-    z-index:-1;
 }
 
 /* NAV */
@@ -53,7 +39,10 @@ nav a:hover{color:white}
 
 /* HERO */
 .hero{
-    padding:140px 8% 120px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:140px 8% 80px;
 }
 
 /* TEXT */
@@ -94,22 +83,23 @@ nav a:hover{color:white}
     box-shadow:0 10px 30px rgba(139,92,246,0.4);
 }
 
-/* 🔥 ПЕРЕХІД (як у твоєму скріні) */
-.hero-divider{
-    position:relative;
-    height:80px;
-    margin-top:40px;
+/* IMAGE */
+.hero-image img{
+    width:700px;
+    transform:translateY(-40px);
 }
 
-.hero-divider::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    width:300px;
-    height:80px;
-    border-bottom:2px solid rgba(99,102,241,0.5);
-    border-radius:0 0 100px 100px;
+/* 🔥 РІВНИЙ ПЕРЕХІД (але виглядає дорого) */
+.divider{
+    height:1px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(99,102,241,0.5),
+        transparent
+    );
+    margin:60px auto;
+    width:80%;
 }
 
 /* SECTION */
@@ -145,6 +135,7 @@ section{
 </nav>
 
 <div class="hero">
+
     <div class="hero-text">
         <h1>
             Cloud & DevOps<br>
@@ -162,16 +153,21 @@ section{
         </a>
     </div>
 
-    <!-- 🔥 ОТ ТУТ ПЕРЕХІД -->
-    <div class="hero-divider"></div>
+    <div class="hero-image">
+        <img src="hero.png" alt="devops">
+    </div>
+
 </div>
+
+<div class="divider"></div>
 
 <section id="about" class="fade">
     <h2>Про практику</h2>
 
     <p>
-        Метою проходження практики було формування базових компетенцій у сфері DevOps,
-        включаючи роботу з операційними системами та автоматизацію процесів.
+        Метою проходження практики було формування базових професійних
+        компетенцій у сфері DevOps, а також набуття практичних навичок роботи
+        з сучасними інструментами автоматизації.
     </p>
 
 </section>
