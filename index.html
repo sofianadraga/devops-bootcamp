@@ -13,8 +13,22 @@ html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
-    background:#020617; /* темніший фон — підганяємо під картинку */
     color:#e2e8f0;
+
+    background:
+        url("hero.png") no-repeat right -40px,
+        #020617;
+
+    background-size: 900px auto;
+}
+
+/* затемнення */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:linear-gradient(to right,#020617 45%,transparent 100%);
+    z-index:-1;
 }
 
 /* NAV */
@@ -24,7 +38,7 @@ nav{
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
-    background:rgba(2,6,23,0.8);
+    background:rgba(2,6,23,0.7);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
@@ -39,11 +53,7 @@ nav a:hover{color:white}
 
 /* HERO */
 .hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:140px 8%;
-    overflow:hidden;
+    padding:140px 8% 120px;
 }
 
 /* TEXT */
@@ -84,22 +94,22 @@ nav a:hover{color:white}
     box-shadow:0 10px 30px rgba(139,92,246,0.4);
 }
 
-/* IMAGE BLOCK */
-.hero-image{
+/* 🔥 ПЕРЕХІД (як у твоєму скріні) */
+.hero-divider{
     position:relative;
-    flex:1;
+    height:80px;
+    margin-top:40px;
 }
 
-/* МАГІЯ */
-.hero-image img{
-    width:800px; /* збільшили */
-    transform:translateX(80px) translateY(40px); /* позиція як у макеті */
-
-    /* плавне злиття з фоном */
-    -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
-    mask-image: linear-gradient(to left, black 70%, transparent 100%);
-
-    opacity:0.95;
+.hero-divider::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:300px;
+    height:80px;
+    border-bottom:2px solid rgba(99,102,241,0.5);
+    border-radius:0 0 100px 100px;
 }
 
 /* SECTION */
@@ -109,62 +119,6 @@ section{
     margin:auto;
 }
 
-h2{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-/* SPLIT */
-.split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-}
-
-/* FEATURE BOX */
-.feature-box{
-    background:rgba(30,41,59,.4);
-    padding:30px;
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.feature{margin-bottom:20px}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
-
-/* CARD */
-.card{
-    background:rgba(30,41,59,.4);
-    padding:25px;
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,.05);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(56,189,248,.15);
-}
-
-/* SCREEN GRID */
-.screens{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.screens img{
-    width:100%;
-    border-radius:12px;
-}
-
-/* FADE */
 .fade{
     opacity:0;
     transform:translateY(40px);
@@ -191,7 +145,6 @@ h2{
 </nav>
 
 <div class="hero">
-
     <div class="hero-text">
         <h1>
             Cloud & DevOps<br>
@@ -209,17 +162,18 @@ h2{
         </a>
     </div>
 
-    <div class="hero-image">
-        <img src="hero.png" alt="devops">
-    </div>
-
+    <!-- 🔥 ОТ ТУТ ПЕРЕХІД -->
+    <div class="hero-divider"></div>
 </div>
 
 <section id="about" class="fade">
     <h2>Про практику</h2>
+
     <p>
-        Метою проходження практики було формування базових компетенцій у сфері DevOps.
+        Метою проходження практики було формування базових компетенцій у сфері DevOps,
+        включаючи роботу з операційними системами та автоматизацію процесів.
     </p>
+
 </section>
 
 <script>
