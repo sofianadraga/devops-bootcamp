@@ -37,27 +37,24 @@ nav a{
 
 nav a:hover{color:white}
 
-/* 🔥 HERO — ТУТ ВСЯ СУТЬ */
+/* HERO */
 .hero{
     display:flex;
-
-    /* ❌ було center */
     align-items:flex-start;
-
     justify-content:space-between;
-
-    /* 🔥 ще менше зверху */
     padding:70px 8% 60px;
-
     overflow:hidden;
 }
 
-/* TEXT */
+/* 🔥 ОТ ТУТ ВСЯ МАГІЯ */
 .hero-text{
     max-width:520px;
-    margin-top:40px; /* тонка настройка */
+
+    /* було 40px → тепер більше */
+    margin-top:120px;
 }
 
+/* TEXT */
 .hero h1{
     font-size:64px;
     line-height:1.1;
@@ -99,8 +96,6 @@ nav a:hover{color:white}
 
 .hero-image img{
     width:800px;
-
-    /* 🔥 трохи вище */
     transform:translateX(80px) translateY(-20px);
 
     -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
@@ -109,7 +104,7 @@ nav a:hover{color:white}
     opacity:0.95;
 }
 
-/* ПЕРЕХІД */
+/* DIVIDER */
 .hero-bottom{
     height:1px;
     background:linear-gradient(
