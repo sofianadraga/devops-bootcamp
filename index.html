@@ -8,13 +8,21 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-
 html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
     background:#020617;
     color:#e2e8f0;
+}
+
+/* 🔥 LOGO GRADIENT */
+.logo{
+    font-weight:600;
+    font-size:18px;
+    background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 /* NAV */
@@ -24,18 +32,43 @@ nav{
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
+    align-items:center;
     background:rgba(2,6,23,0.8);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
 
-nav a{
+/* NAV LINKS */
+.nav-links a{
+    position:relative;
     color:#94a3b8;
-    margin-left:20px;
+    margin-left:25px;
     text-decoration:none;
+    transition:.3s;
 }
 
-nav a:hover{color:white}
+/* hover */
+.nav-links a:hover{
+    color:white;
+}
+
+/* 🔥 ACTIVE LINK */
+.nav-links a.active{
+    color:#a78bfa;
+}
+
+/* underline glow */
+.nav-links a.active::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,#6366f1,#8b5cf6);
+    border-radius:2px;
+    box-shadow:0 0 10px rgba(139,92,246,0.6);
+}
 
 /* HERO */
 .hero{
@@ -46,15 +79,12 @@ nav a:hover{color:white}
     overflow:hidden;
 }
 
-/* 🔥 ОТ ТУТ ВСЯ МАГІЯ */
+/* TEXT */
 .hero-text{
     max-width:520px;
-
-    /* було 40px → тепер більше */
     margin-top:120px;
 }
 
-/* TEXT */
 .hero h1{
     font-size:64px;
     line-height:1.1;
@@ -100,8 +130,6 @@ nav a:hover{color:white}
 
     -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
     mask-image: linear-gradient(to left, black 70%, transparent 100%);
-
-    opacity:0.95;
 }
 
 /* DIVIDER */
@@ -140,16 +168,18 @@ section{
 <body>
 
 <nav>
-    <div>Cloud & DevOps Bootcamp</div>
-    <div>
-        <a href="#about">Про</a>
-        <a href="#topics">Теми</a>
-        <a href="#practice">Практика</a>
-        <a href="#result">Результат</a>
+    <div class="logo">Cloud & DevOps Bootcamp</div>
+
+    <div class="nav-links">
+        <a href="#home" class="active">Головна</a>
+        <a href="#about">Про практику</a>
+        <a href="#topics">Теми навчання</a>
+        <a href="#practice">Практичні завдання</a>
+        <a href="#result">Висновок</a>
     </div>
 </nav>
 
-<div class="hero">
+<div class="hero" id="home">
 
     <div class="hero-text">
         <h1>
@@ -158,9 +188,8 @@ section{
         </h1>
 
         <p>
-            Практичне освоєння DevOps-технологій у межах програми EPAM.
-            Основна увага приділялася роботі з Linux, автоматизації процесів
-            за допомогою Bash та Python, а також використанню Docker.
+            Звіт про проходження практики в компанії EPAM
+            у рамках навчальної програми Cloud & DevOps Bootcamp.
         </p>
 
         <a href="#about" class="btn">
