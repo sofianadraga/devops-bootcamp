@@ -31,7 +31,6 @@ nav a{
     color:#94a3b8;
     margin-left:20px;
     text-decoration:none;
-    transition:.3s;
 }
 nav a:hover{color:white}
 
@@ -60,19 +59,19 @@ nav a:hover{color:white}
     opacity:.75;
 }
 
-/* INFINITY SVG */
-.infinity-svg{
-    width:420px;
+/* DEVOPS INFINITY */
+.devops-icon{
+    width:480px;
     filter:
         drop-shadow(0 0 20px #8b5cf6)
-        drop-shadow(0 0 40px #8b5cf6)
-        drop-shadow(0 0 80px rgba(139,92,246,0.5));
-    animation:pulse 3s infinite;
+        drop-shadow(0 0 50px #8b5cf6)
+        drop-shadow(0 0 90px rgba(139,92,246,0.6));
+    animation:glowPulse 3s infinite;
 }
 
-@keyframes pulse{
+@keyframes glowPulse{
     0%{filter:drop-shadow(0 0 10px #8b5cf6)}
-    50%{filter:drop-shadow(0 0 40px #8b5cf6)}
+    50%{filter:drop-shadow(0 0 60px #8b5cf6)}
     100%{filter:drop-shadow(0 0 10px #8b5cf6)}
 }
 
@@ -175,23 +174,29 @@ h2{
 
         <p>
             Практичне освоєння DevOps-технологій у межах програми EPAM.
-            У процесі навчання основна увага приділялася роботі з Linux,
-            автоматизації процесів за допомогою Bash та Python,
-            а також використанню Docker для створення ізольованих середовищ виконання.
+            Основна увага приділялася роботі з Linux, автоматизації процесів
+            за допомогою Bash та Python, а також використанню Docker.
         </p>
     </div>
 
-    <!-- НОРМАЛЬНА НЕСКІНЧЕННІСТЬ -->
-    <svg class="infinity-svg" viewBox="0 0 300 150">
-        <path d="M50,75 
-                 C50,20 150,20 150,75 
-                 C150,130 250,130 250,75 
-                 C250,20 150,20 150,75 
-                 C150,130 50,130 50,75"
-              fill="none"
-              stroke="#8b5cf6"
-              stroke-width="10"
-              stroke-linecap="round"/>
+    <!-- НОРМАЛЬНА DEVOPS ІКОНКА -->
+    <svg class="devops-icon" viewBox="0 0 600 300">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8b5cf6"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+      </defs>
+
+      <path d="M150,150 
+               C150,40 300,40 300,150 
+               C300,260 450,260 450,150 
+               C450,40 300,40 300,150 
+               C300,260 150,260 150,150"
+            fill="none"
+            stroke="url(#grad)"
+            stroke-width="25"
+            stroke-linecap="round"/>
     </svg>
 </div>
 
@@ -203,21 +208,20 @@ h2{
 
             <p>
                 Метою проходження практики було формування базових професійних компетенцій
-                у сфері DevOps, що включає розуміння принципів роботи операційних систем,
-                автоматизації процесів та взаємодії з інфраструктурою.
+                у сфері DevOps, включаючи роботу з операційними системами,
+                автоматизацію процесів та використання сучасних інструментів.
             </p>
 
             <p>
-                Практика проходила у форматі навчальних модулів, де теоретичні знання
-                одразу закріплювалися виконанням практичних завдань у командному рядку.
-                Такий підхід дозволив сформувати системне розуміння інструментів.
+                Практика включала опрацювання навчальних модулів та виконання практичних завдань,
+                що дозволило закріпити теоретичні знання та сформувати практичні навички.
             </p>
         </div>
 
         <div class="feature-box">
-            <div class="feature">⚡ Практичний підхід — більшість часу практика</div>
-            <div class="feature">⚙️ Сучасні технології — Linux, Bash, Python, Docker</div>
-            <div class="feature">📈 Формування навичок — орієнтація на реальні задачі</div>
+            <div class="feature">⚡ Практичний підхід</div>
+            <div class="feature">⚙️ Сучасні технології DevOps</div>
+            <div class="feature">📈 Реальні навички</div>
         </div>
 
     </div>
@@ -227,36 +231,15 @@ h2{
     <h2>Теми навчання</h2>
 
     <div class="grid">
-        <div class="card">
-            <b>Linux Practice</b><br><br>
-            Робота з файловою системою, процесами та командами.
-        </div>
-
-        <div class="card">
-            <b>Bash Practice</b><br><br>
-            Написання скриптів та автоматизація процесів.
-        </div>
-
-        <div class="card">
-            <b>Python Practice</b><br><br>
-            Створення скриптів і робота з даними.
-        </div>
-
-        <div class="card">
-            <b>Docker Practice</b><br><br>
-            Контейнеризація, створення образів і запуск сервісів.
-        </div>
+        <div class="card"><b>Linux Practice</b><br>Робота з файловою системою та процесами</div>
+        <div class="card"><b>Bash Practice</b><br>Автоматизація за допомогою скриптів</div>
+        <div class="card"><b>Python Practice</b><br>Скрипти та обробка даних</div>
+        <div class="card"><b>Docker Practice</b><br>Контейнеризація та середовища</div>
     </div>
 </section>
 
 <section id="practice" class="fade">
     <h2>Практичні завдання</h2>
-
-    <p>
-        У межах кожного модуля виконувалися практичні завдання,
-        що дозволило закріпити отримані знання та сформувати навички
-        роботи з інструментами DevOps.
-    </p>
 
     <div class="screens">
         <img src="linux.png">
@@ -270,13 +253,8 @@ h2{
     <h2>Результат</h2>
 
     <p>
-        У результаті проходження практики було сформовано базові навички
-        роботи з Linux, Bash, Python та Docker.
-    </p>
-
-    <p>
-        Отриманий досвід є основою для подальшого розвитку у сфері DevOps
-        та роботи з сучасною ІТ-інфраструктурою.
+        У результаті проходження практики було сформовано базові навички роботи
+        з DevOps-інструментами та розуміння принципів автоматизації.
     </p>
 </section>
 
