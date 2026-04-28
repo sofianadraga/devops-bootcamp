@@ -8,6 +8,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
     font-family:'Inter',sans-serif;
     background:radial-gradient(circle at top,#0b1226,#020617);
@@ -25,10 +26,12 @@ nav{
     backdrop-filter:blur(10px);
     z-index:1000;
 }
+
 nav a{
     color:#94a3b8;
     margin-left:20px;
     text-decoration:none;
+    transition:.3s;
 }
 nav a:hover{color:white}
 
@@ -39,23 +42,54 @@ nav a:hover{color:white}
     align-items:center;
     padding:140px 8%;
 }
+
 .hero h1{
     font-size:64px;
     line-height:1.1;
 }
+
 .gradient{
     background:linear-gradient(90deg,#38bdf8,#8b5cf6);
     -webkit-background-clip:text;
     color:transparent;
 }
+
 .hero p{
     margin-top:20px;
-    max-width:500px;
-    opacity:.7;
+    max-width:520px;
+    opacity:.75;
 }
-.hero img{
+
+/* INFINITY */
+.infinity{
     width:420px;
-    filter:drop-shadow(0 0 40px rgba(56,189,248,.3));
+    height:200px;
+    position:relative;
+    filter:drop-shadow(0 0 40px rgba(139,92,246,0.6));
+}
+
+.infinity::before,
+.infinity::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border:12px solid transparent;
+    border-top:12px solid #8b5cf6;
+    border-radius:50%;
+    box-shadow:
+        0 0 20px #8b5cf6,
+        0 0 40px #8b5cf6;
+}
+
+.infinity::before{
+    left:0;
+    transform:rotate(45deg);
+}
+
+.infinity::after{
+    right:0;
+    transform:rotate(-45deg);
 }
 
 /* SECTION */
@@ -63,6 +97,11 @@ section{
     padding:100px 8%;
     max-width:1200px;
     margin:auto;
+}
+
+h2{
+    font-size:32px;
+    margin-bottom:20px;
 }
 
 /* SPLIT */
@@ -79,6 +118,7 @@ section{
     border-radius:16px;
     border:1px solid rgba(255,255,255,.05);
 }
+
 .feature{
     margin-bottom:20px;
 }
@@ -98,6 +138,7 @@ section{
     border:1px solid rgba(255,255,255,.05);
     transition:.3s;
 }
+
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 20px 40px rgba(56,189,248,.15);
@@ -109,14 +150,23 @@ section{
     grid-template-columns:1fr 1fr;
     gap:20px;
 }
+
 .screens img{
     width:100%;
     border-radius:12px;
 }
 
 /* FADE */
-.fade{opacity:0;transform:translateY(40px);transition:1s}
-.fade.show{opacity:1;transform:translateY(0)}
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
 </style>
 </head>
 
@@ -141,12 +191,13 @@ section{
 
         <p>
             Практичне освоєння DevOps-технологій у межах програми EPAM.
-            Робота з Linux, автоматизація процесів та контейнеризація.
+            У процесі навчання основна увага приділялася роботі з Linux,
+            автоматизації процесів за допомогою Bash та Python,
+            а також використанню Docker для створення ізольованих середовищ виконання.
         </p>
     </div>
 
-    <!-- Cloud illustration -->
-    <img src="https://cdn-icons-png.flaticon.com/512/4144/4144782.png">
+    <div class="infinity"></div>
 </div>
 
 <section id="about" class="fade">
@@ -156,21 +207,22 @@ section{
             <h2>Про практику</h2>
 
             <p>
-                Метою практики було формування базових компетенцій у сфері DevOps,
-                включаючи роботу з операційними системами, автоматизацію процесів
-                та використання сучасних інструментів.
+                Метою проходження практики було формування базових професійних компетенцій
+                у сфері DevOps, що включає розуміння принципів роботи операційних систем,
+                автоматизації процесів та взаємодії з інфраструктурою.
             </p>
 
             <p>
-                Основна частина навчання була зосереджена на практичних завданнях,
-                що виконувались у командному рядку.
+                Практика проходила у форматі навчальних модулів, де теоретичні знання
+                одразу закріплювалися виконанням практичних завдань у командному рядку.
+                Такий підхід дозволив глибше зрозуміти логіку роботи інструментів.
             </p>
         </div>
 
         <div class="feature-box">
-            <div class="feature">⚡ Практичний підхід — більшість часу практика</div>
-            <div class="feature">⚙️ Сучасні інструменти DevOps</div>
-            <div class="feature">📈 Формування реальних навичок</div>
+            <div class="feature">⚡ Практичний підхід — більшість часу присвячена виконанню завдань</div>
+            <div class="feature">⚙️ Сучасні технології — Linux, Bash, Python, Docker</div>
+            <div class="feature">📈 Формування навичок — орієнтація на реальні сценарії використання</div>
         </div>
 
     </div>
@@ -180,21 +232,46 @@ section{
     <h2>Теми навчання</h2>
 
     <div class="grid">
-        <div class="card">Linux Practice</div>
-        <div class="card">Bash Practice</div>
-        <div class="card">Python Practice</div>
-        <div class="card">Docker Practice</div>
+        <div class="card">
+            <b>Linux Practice</b><br><br>
+            Робота з файловою системою, процесами, правами доступу
+            та базовими командами операційної системи Linux.
+        </div>
+
+        <div class="card">
+            <b>Bash Practice</b><br><br>
+            Написання скриптів для автоматизації процесів,
+            використання змінних та аргументів.
+        </div>
+
+        <div class="card">
+            <b>Python Practice</b><br><br>
+            Використання Python для створення утиліт,
+            обробки даних і базової автоматизації.
+        </div>
+
+        <div class="card">
+            <b>Docker Practice</b><br><br>
+            Основи контейнеризації, створення образів,
+            запуск і управління контейнерами.
+        </div>
     </div>
 </section>
 
 <section id="practice" class="fade">
     <h2>Практичні завдання</h2>
 
+    <p>
+        У межах кожного модуля виконувалися практичні завдання,
+        що дозволили закріпити отримані знання та сформувати
+        практичні навички роботи з інструментами DevOps.
+    </p>
+
     <div class="screens">
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*F4X8o6R2k2Rk5v0zzakDxA.png">
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*U3bXx4p6FfV0XQ2W5aZ0sQ.png">
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*Q7y1lF6V9sO1p6j3nK9QWg.png">
-        <img src="https://miro.medium.com/v2/resize:fit:1400/1*Fv8vK2z7Z0lX3x9Z3c7R7Q.png">
+        <img src="linux.png">
+        <img src="bash.png">
+        <img src="docker.png">
+        <img src="docker2.png">
     </div>
 </section>
 
@@ -202,18 +279,24 @@ section{
     <h2>Результат</h2>
 
     <p>
-        У результаті проходження практики було сформовано базові навички роботи
-        з Linux, Bash, Python та Docker, що є основою для подальшого розвитку
-        у сфері DevOps.
+        У результаті проходження практики було сформовано базові навички
+        роботи з Linux, Bash, Python та Docker.
+    </p>
+
+    <p>
+        Отриманий досвід дозволяє краще розуміти принципи автоматизації,
+        роботи з інфраструктурою та підготовки середовищ виконання,
+        що є ключовими аспектами сучасного DevOps-підходу.
     </p>
 </section>
 
 <script>
-const el=document.querySelectorAll('.fade');
+const elements=document.querySelectorAll('.fade');
+
 window.addEventListener('scroll',()=>{
-    el.forEach(e=>{
-        if(e.getBoundingClientRect().top<window.innerHeight-100){
-            e.classList.add('show');
+    elements.forEach(el=>{
+        if(el.getBoundingClientRect().top<window.innerHeight-100){
+            el.classList.add('show');
         }
     })
 })
