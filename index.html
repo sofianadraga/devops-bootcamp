@@ -13,7 +13,7 @@ html{scroll-behavior:smooth;}
 
 body{
     font-family:'Inter',sans-serif;
-    background:#020617; /* темніший фон — підганяємо під картинку */
+    background:#020617;
     color:#e2e8f0;
 }
 
@@ -42,7 +42,10 @@ nav a:hover{color:white}
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:140px 8%;
+
+    /* 🔥 було 140px → робимо компактніше */
+    padding:110px 8% 60px;
+
     overflow:hidden;
 }
 
@@ -90,16 +93,36 @@ nav a:hover{color:white}
     flex:1;
 }
 
-/* МАГІЯ */
 .hero-image img{
-    width:800px; /* збільшили */
-    transform:translateX(80px) translateY(40px); /* позиція як у макеті */
+    width:800px;
+    transform:translateX(80px) translateY(40px);
 
-    /* плавне злиття з фоном */
     -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
     mask-image: linear-gradient(to left, black 70%, transparent 100%);
 
     opacity:0.95;
+}
+
+/* 🔥 ПЕРЕХІД ВНИЗУ (НОРМАЛЬНИЙ) */
+.hero-bottom{
+    position:relative;
+    height:80px;
+    margin-top:20px;
+}
+
+.hero-bottom::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:60%;
+    height:2px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(139,92,246,0.5),
+        transparent
+    );
 }
 
 /* SECTION */
@@ -112,56 +135,6 @@ section{
 h2{
     font-size:32px;
     margin-bottom:20px;
-}
-
-/* SPLIT */
-.split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-}
-
-/* FEATURE BOX */
-.feature-box{
-    background:rgba(30,41,59,.4);
-    padding:30px;
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.feature{margin-bottom:20px}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
-}
-
-/* CARD */
-.card{
-    background:rgba(30,41,59,.4);
-    padding:25px;
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,.05);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(56,189,248,.15);
-}
-
-/* SCREEN GRID */
-.screens{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.screens img{
-    width:100%;
-    border-radius:12px;
 }
 
 /* FADE */
@@ -214,6 +187,9 @@ h2{
     </div>
 
 </div>
+
+<!-- 🔥 ОТУТ ПЕРЕХІД -->
+<div class="hero-bottom"></div>
 
 <section id="about" class="fade">
     <h2>Про практику</h2>
